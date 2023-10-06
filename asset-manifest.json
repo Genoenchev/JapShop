@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/JapShop/static/css/main.8918d982.css",
+    "main.js": "/JapShop/static/js/main.2273e485.js",
+    "static/js/787.47ca32e3.chunk.js": "/JapShop/static/js/787.47ca32e3.chunk.js",
+    "index.html": "/JapShop/index.html",
+    "main.8918d982.css.map": "/JapShop/static/css/main.8918d982.css.map",
+    "main.2273e485.js.map": "/JapShop/static/js/main.2273e485.js.map",
+    "787.47ca32e3.chunk.js.map": "/JapShop/static/js/787.47ca32e3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8918d982.css",
+    "static/js/main.2273e485.js"
+  ]
+}
