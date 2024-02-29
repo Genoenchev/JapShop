@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using RestaurantAPI.Exceptions;
 using WebAPI.Data;
+using WebAPI.Services.CategoryService;
+using WebAPI.Services.ItemService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +36,8 @@ builder.Services.AddAuthentication(x =>
         ValidIssuer = builder.Configuration["JwtSettings:Issuer"]
     };
 });
+builder.Services.AddScoped<IItemService, ItemService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -44,9 +49,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
 app.UseCors();
+
+app.AddGlobalErrorHandler();
+
+app.UseAuthorization();
 
 app.MapControllers();
 
